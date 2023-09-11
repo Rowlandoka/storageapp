@@ -5,6 +5,7 @@ import { Modal, Box, Typography, Button, Input } from "@mui/material";
 import { storage } from "../config/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
+// Styling for the upload modal
 const style = {
   width: 400,
   bgcolor: "background.default",
@@ -15,30 +16,37 @@ const style = {
   transform: "translate(-50%, -50%)",
 };
 
+// File component
 const FileComponent = () => {
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState("");
   const [percent, setPercent] = useState(0);
 
+  // Open the modal
   const handleOpen = () => {
     setOpen(true);
   };
 
+  // Close the modal
   const handleClose = () => {
     setOpen(false);
   };
 
+  // Handle changes to the input element
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setFile(e.target.files[0]);
     }
   };
 
+  // Firebase upload function
   const handleUpload = () => {
     if (!file) return;
 
+    // Storage bucket reference to firebase storage bucket
     const storageRef = ref(storage, `files/${file.name}`);
 
+    // Upload progress and file size uploaded
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on(

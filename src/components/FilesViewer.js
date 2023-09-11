@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./FilesViewer.css";
 import { storage } from "../config/firebase";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-// import FileItem from "./FileItem";
-// import FileCard from "./FileCard";
 
+// File display component
 const FilesViewer = () => {
   const [files, setFiles] = useState([]);
 
+  // File retrieval from firebase cloud database
   useEffect(() => {
     listAll(ref(storage, "files")).then((response) => {
       response.items.forEach((item) => {
@@ -18,6 +18,7 @@ const FilesViewer = () => {
     });
   }, []);
 
+  // Styling for the retrieved image display
   const styleImage = {
     borderRadius: "5px",
     width: 250,
@@ -38,37 +39,7 @@ const FilesViewer = () => {
             alt="fileUrl"
           />
         ))}
-        {/* {files.slice(0, 5).map((url) => {
-          return (
-            <img
-              width={200}
-              height={200}
-              src={url}
-              alt="fileUrl"
-            />
-          );
-        })} */}
       </div>
-      {/* <div className="fileViewer__titles">
-        <div className="fileViewer__titles--left">
-          <p>Name</p>
-        </div>
-        <div className="fileViewer__titles--right">
-          <p>Last modified</p>
-          <p>File size</p>
-        </div>
-      </div> */}
-      {/* <FileItem /> */}
-
-      {/* {files.map(({ id, item }) => (
-        <FileItem
-          id={id}
-          caption={item.caption}
-          timestamp={item.timestamp}
-          fileUrl={item.fileUrl}
-          size={item.size}
-        />
-      ))} */}
     </div>
   );
 };
