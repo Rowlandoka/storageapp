@@ -2,13 +2,21 @@
 
 ![alt-text](./public/home.png "App Dashboard")
 
-The app name is RayDrive an online photo storage application build using React and firebase storage system
+RayDrive an online photo storage application build using React and firebase storage system
 
 # Introduction
 
+## Deploy App Link:
+
 App link: https://storageapp-83909.web.app/
-Project blog articles:
-Authors Linkedin: https://www.linkedin.com/in/rowland-oka
+
+## Project Blog:
+
+https://medium.com/@rowlandoka/online-photo-storage-application-using-react-and-firebase-1fa3de929af3
+
+## Authors Linkedin
+
+https://www.linkedin.com/in/rowland-oka
 
 # Installation
 
