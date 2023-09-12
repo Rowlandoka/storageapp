@@ -1,5 +1,7 @@
 # App Name: storageapp
 
+![alt-text](./public/home.png "App Dashboard")
+
 The app name is RayDrive an online photo storage application build using React and firebase storage system
 
 # Introduction
@@ -34,6 +36,10 @@ To improve this app, contributions are highly welcome to add and improve this ap
 
 Related projects exist such as:
 Dropbox, Google Drive etc
+
+# Author:
+
+1.  Rowland Oka <https://github.com/Rowlandoka/>
 
 # License:
 
